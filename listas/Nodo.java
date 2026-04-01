@@ -1,59 +1,43 @@
-package tallerListas.listas;
-
+package listas;
 
 /**
- * Clase nodo aplicando Generics
- * 
- * 
- * 
- * **/
-
-
+ * Nodo genérico para listas simplemente enlazadas
+ * @param <T> tipo de dato almacenado
+ */
 public class Nodo<T> {
 
-	private Nodo<T> siguienteNodo;
-	private T valorNodo;
-	
-	
+	private Nodo<T> next;
+	private T value;
+
 	/**
-	 * Constructor de la clase Nodo
-	 * @param dato Elemento que se guarda en el Nodo
+	 * Constructor con valor
 	 */
-	public Nodo(T valorNodo) {
-		this.valorNodo = valorNodo;
+	public Nodo(T value) {
+		this.value = value;
+		this.next = null;
 	}
-	
-	
+
 	/**
-	 * Constructor de la clase Nodo
-	 * @param dato Elemento que se guarda en el Nodo
-	 * @param siguiente Enlace al siguiente Nodo
+	 * Constructor con referencia al siguiente nodo
 	 */
-	public Nodo(T dato, Nodo<T> siguiente) {
-		super();
-		this.valorNodo = dato;
-		this.siguienteNodo = siguiente;
-	}
-	
-
-	//Metodos get y set de la clase Nodo
-	
-	public Nodo<T> getSiguienteNodo() {
-		return siguienteNodo;
+	public Nodo(T value, Nodo<T> next) {
+		this.value = value;
+		this.next = next;
 	}
 
-
-	public void setSiguienteNodo(Nodo<T> siguienteNodo) {
-		this.siguienteNodo = siguienteNodo;
+	public Nodo<T> getNext() {
+		return next;
 	}
 
-
-	public T getValorNodo() {
-		return valorNodo;
+	public void setNext(Nodo<T> next) {
+		this.next = next;
 	}
 
+	public T getValue() {
+		return value;
+	}
 
-	public void setValorNodo(T valorNodo) {
-		this.valorNodo = valorNodo;
+	public void setValue(T value) {
+		this.value = value;
 	}
 }

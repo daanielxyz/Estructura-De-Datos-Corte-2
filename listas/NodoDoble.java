@@ -1,74 +1,48 @@
-package tallerListas.listas;
-
+package listas;
 
 /**
- * Clase nodo aplicando Generics
- * 
- * 
- * 
- * **/
-
-
+ * Nodo doble genérico para listas doblemente enlazadas
+ * @param <T> tipo de dato almacenado
+ */
 public class NodoDoble<T> {
 
-	private NodoDoble<T> siguienteNodo;
-	private NodoDoble<T> anteriorNodo;
-	private T valorNodo;
-	
-	
-	/**
-	 * Constructor de la clase Nodo
-	 * @param dato Elemento que se guarda en el Nodo
-	 */
-	public NodoDoble(T valorNodo) {
-		this.valorNodo = valorNodo;
-	}
-	
-	
-	/**
-	 * Constructor de la clase Nodo
-	 * @param dato Elemento que se guarda en el Nodo
-	 * @param siguiente Enlace al siguiente Nodo
-	 */
-	public NodoDoble(T dato, NodoDoble<T> siguiente,NodoDoble<T> anterior) {
-		super();
-		this.valorNodo = dato;
-		this.siguienteNodo = siguiente;
-		this.anteriorNodo = anterior;
-	}
-	
+	private NodoDoble<T> next;
+	private NodoDoble<T> previous;
+	private T value;
 
-	//Metodos get y set de la clase Nodo
-	
-	public NodoDoble<T> getSiguienteNodo() {
-		return siguienteNodo;
+	public NodoDoble(T value) {
+		this.value = value;
+		this.next = null;
+		this.previous = null;
 	}
 
-
-	public void setSiguienteNodo(NodoDoble<T> siguienteNodo) {
-		this.siguienteNodo = siguienteNodo;
+	public NodoDoble(T value, NodoDoble<T> next, NodoDoble<T> previous) {
+		this.value = value;
+		this.next = next;
+		this.previous = previous;
 	}
 
-
-	public T getValorNodo() {
-		return valorNodo;
+	public NodoDoble<T> getNext() {
+		return next;
 	}
 
-
-	public void setValorNodo(T valorNodo) {
-		this.valorNodo = valorNodo;
+	public void setNext(NodoDoble<T> next) {
+		this.next = next;
 	}
 
-
-	public NodoDoble<T> getAnteriorNodo() {
-		return anteriorNodo;
+	public NodoDoble<T> getPrevious() {
+		return previous;
 	}
 
-
-	public void setAnteriorNodo(NodoDoble<T> anteriorNodo) {
-		this.anteriorNodo = anteriorNodo;
+	public void setPrevious(NodoDoble<T> previous) {
+		this.previous = previous;
 	}
-	
-	
-	
+
+	public T getValue() {
+		return value;
+	}
+
+	public void setValue(T value) {
+		this.value = value;
+	}
 }
